@@ -1,0 +1,29 @@
+<h1>Create a new Recipe</h1>
+
+<% if @recipe.errors.any? %>
+<h2>Your recipe post could not be created because...</h2>
+    <ul>
+        <% @recipe.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @recipe do |f| %>
+    <p>
+        <%= f.label :title %><br/>
+        <%= f.text_field :title %>
+    </p>
+    <p>
+        <%= f.label :details %><br/>
+        <%= f.text_area :details %>
+    </p>
+    <p>
+        <%= f.label :description %><br/>
+        <%= f.text_area :description %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+
+<% end %>
