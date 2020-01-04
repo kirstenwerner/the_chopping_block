@@ -17,6 +17,7 @@
             <td><%= recipe.description %></td>
             <td><%= link_to "Edit", edit_recipe_path(recipe) %></td>
             <td><%= link_to "Show", recipe_path(recipe) %></td>
+            <td><%= link_to "Delete", recipe_path(recipe), method: :delete, data: {confirm: "Are you sure you want to delete this recipe?" } %></td>
         </tr>
     <% end %>
 </table>
