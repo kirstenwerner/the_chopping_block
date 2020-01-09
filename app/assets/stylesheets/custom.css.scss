@@ -44,8 +44,13 @@ $navbar-default-bg: #f79c6e;
   background-color: rgba(80, 238, 177, 0.747);
 }
 
+.recipe-meta-details {
+  border-top: 1px solid #dddada;
+  margin-top: 15px;
+}
+
 .recipe-actions {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #dddada;
   padding-top: 5px;
 }
 
@@ -59,7 +64,7 @@ $navbar-default-bg: #f79c6e;
 }
 
 .recipe-body {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #dddada;
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -67,7 +72,7 @@ $navbar-default-bg: #f79c6e;
 footer {
   margin-top: 25px;
   padding-top: 5px;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #dddada;
   color: #777;
 }
 
