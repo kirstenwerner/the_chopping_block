@@ -42,12 +42,11 @@ class RecipesController < ApplicationController
     end 
 
     private
-        def set_recipe
-            @recipe = Recipe.find(params[:id])
-        end 
+    def set_recipe
+        @recipe = Recipe.find(params[:id])
+    end 
 
-        def article_params 
-            params.require(:recipe).permit(:title, :details, :description)
-        end 
-
+    def article_params 
+        params.require(:recipe).permit(:title, :details, :description)
+    end 
 end 
