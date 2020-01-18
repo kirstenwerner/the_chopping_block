@@ -11,7 +11,7 @@
                         <small>Created by: <%= recipe.user.username if recipe.user %>, <%= time_ago_in_words(recipe.created_at) %> ago, last updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
                     </div>
                 </div>
-                <% if logged_in? && current_user == recipe.user %>
+                <% if logged_in? && (current_user == recipe.user || current_user.admin?) %>
                     <div class="recipe-actions">
                         <%= link_to "Edit this Recipe", edit_recipe_path(recipe), class: "btn-xs btn-primary" %>
                         <%= link_to "Delete this Recipe", recipe_path(recipe), method: :delete, 
