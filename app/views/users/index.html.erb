@@ -11,6 +11,9 @@
                         <%= link_to user.username, user_path(user) %>
                     </li> 
                     <li><small><%= pluralize(user.recipes.count, "recipe") if user.recipes %></small></li>
+                    <% if logged_in? && current_user.admin? %>
+                        <li><%= link_to "Delete this user", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete this user and all their recipes?" } %></li>
+                    <% end %>
                 </div>
             </div>
         </ul>
