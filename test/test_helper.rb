@@ -10,4 +10,8 @@ class ActiveSupport::TestCase
   def sign_in_as(user, password)
     post login_path, params: { session:{email: user.email, password: password} }
   end
+
+  def create_admin_user()
+    @user = User.create(username: "john", email: "john@example.com", password: "password", admin: true)
+  end
 end
