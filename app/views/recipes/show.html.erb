@@ -25,6 +25,10 @@
     <hr>
     <%= simple_format(@recipe.description) %>
 
+    <% if @recipe.categories.any? %>
+        <p>Categories: <%= render @recipe.categories %></p>
+    <% end %>
+
     <div class="recipe-actions">
         <% if logged_in? && (current_user == @recipe.user || current_user.admin?) %>
             <%= link_to "Edit this Recipe", edit_recipe_path(@recipe), class: "btn-xs btn-primary" %>

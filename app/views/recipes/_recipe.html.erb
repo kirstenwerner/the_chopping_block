@@ -6,7 +6,11 @@
                     <%= link_to recipe.title, recipe_path(recipe) %>
                 </div>
                 <div class="recipe-body">
-                    <%= truncate(recipe.description, length: 100) %>
+                    <%= truncate(recipe.description, length: 100) %> <br/><br/>
+                    <% if recipe.categories.any? %>
+                        <p>Categories: <%= render recipe.categories %></p>
+                    <% end %>
+
                     <div class="recipe-meta-details">
                         <small>Created by: <%= recipe.user.username if recipe.user %>, <%= time_ago_in_words(recipe.created_at) %> ago, last updated: <%= time_ago_in_words(recipe.updated_at) %> ago</small>
                     </div>
