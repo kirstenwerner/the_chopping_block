@@ -1,5 +1,10 @@
 <h1 align="center"><%= "Recipes for " + @category.name + " dishes"%></h1>
 <div align="center">
+    <% if logged_in? && current_user.admin? %>
+        <div class="row">
+            <span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
+        </div>
+    <% end %>
     <%= will_paginate @category_recipes %>
 </div>
 <%= render 'recipes/recipe', obj: @category_recipes %>
